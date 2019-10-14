@@ -11,7 +11,7 @@ public class HomePageSteps {
         this.homePage = new HomePage();
     }
 
-    @Given("^A user navigates WAES HomePage$")
+    @Given("^I navigate to WAES HomePage$")
     public void aUserNavigatesToHomePage() {
         this.homePage.goToHomePage();
     }

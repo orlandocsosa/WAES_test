@@ -1,5 +1,7 @@
 package waes.pages.loginpage;
 
+import static org.junit.Assert.assertTrue;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 
@@ -22,7 +24,12 @@ public class LoginPageSteps {
     }
 
     @And("^I click the LoginPage Login button$")
-    public void login() throws InterruptedException {
+    public void login(){
         this.loginPage.LoginButton().click();
+    }
+
+    @And("^I should see the Login button from Login page$")
+    public void checkLoginPresent(){
+        assertTrue(this.loginPage.LoginButton().isDisplayed());
     }
 }
