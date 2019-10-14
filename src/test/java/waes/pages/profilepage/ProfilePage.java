@@ -2,6 +2,9 @@ package waes.pages.profilepage;
 
 import waes.pages.BasePage;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,6 +26,9 @@ public class ProfilePage extends BasePage{
 
     @FindBy(linkText = "log out")
     private WebElement logout;
+
+    @FindBy(className = "view-module--view--3wzVy")
+    private WebElement section;
 
     @FindBy(id = "status")
     private WebElement status;
@@ -49,6 +55,16 @@ public class ProfilePage extends BasePage{
 
     WebElement userLogged() {
         return status;
+    }
+
+    WebElement welcomeMessage() {
+        List<WebElement> elements = section.findElements(By.tagName("p"));
+        return elements.get(1);
+    }
+
+    WebElement superPowerMessage() {
+        List<WebElement> elements = section.findElements(By.tagName("p"));
+        return elements.get(2);
     }
 
     WebElement usersTable() {
