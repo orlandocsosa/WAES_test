@@ -29,7 +29,7 @@ public class LoginPage extends HomePage{
         return password_input;
     }
 
-    WebElement LoginButton() {
+    WebElement loginButton() {
         return login_button;
     }
 }

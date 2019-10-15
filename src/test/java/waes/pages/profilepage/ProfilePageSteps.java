@@ -27,6 +27,13 @@ public class ProfilePageSteps {
         assertTrue(message.toLowerCase().contains(user));
     }
 
+    @And("^I should see the New User Welcome message for the \"([^\"]*)\" user$")
+    public void checkNewUserMessage(String user) {
+        String message = this.profilePage.welcomeMessage().getText();
+        assertTrue(message.contains("Welcome to your new profile page"));
+        assertTrue(message.toLowerCase().contains(user));
+    }
+
     @And("^I should show see following superpower: \"([^\"]*)\"$")
     public void checkSuperpower(String superpower) {
         String message = this.profilePage.superPowerMessage().getText();

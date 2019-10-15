@@ -25,11 +25,11 @@ public class LoginPageSteps {
 
     @And("^I click the LoginPage Login button$")
     public void login(){
-        this.loginPage.LoginButton().click();
+        this.loginPage.loginButton().click();
     }
 
     @And("^I should see the Login button from Login page$")
     public void checkLoginPresent(){
-        assertTrue(this.loginPage.LoginButton().isDisplayed());
+        assertTrue(this.loginPage.loginButton().isDisplayed());
     }
 }

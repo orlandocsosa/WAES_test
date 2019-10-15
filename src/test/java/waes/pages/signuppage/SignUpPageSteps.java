@@ -11,18 +11,35 @@ public class SignUpPageSteps {
         this.signUpPage = new SignUpPage();
     }
 
-    // @Given("^I set \"([^\"]*)\" as username$")
-    // public void setUsername(String user) throws InterruptedException {
-    //     this.loginPage.username().sendKeys(user);
-    // }
+    @Given("^I set \"([^\"]*)\" as username in Sign Up Page$")
+    public void setUsername(String user) throws InterruptedException {
+        this.signUpPage.username().sendKeys(user);
+    }
 
-    // @And("^I set \"([^\"]*)\" as password$")
-    // public void setPassword(String password) {
-    //     this.loginPage.password().sendKeys(password);
-    // }
+    @And("^I set \"([^\"]*)\" as password in Sign Up Page$")
+    public void setPassword(String password) {
+        this.signUpPage.password().sendKeys(password);
+    }
 
-    // @And("^I click the LoginPage Login button$")
-    // public void login() throws InterruptedException {
-    //     this.loginPage.LoginButton().click();
-    // }
+    @And("^I set \"([^\"]*)\" as name in Sign Up Page$")
+    public void setName(String name) {
+        this.signUpPage.name().sendKeys(name);
+    }
+
+    @And("^I set \"([^\"]*)\" as email in Sign Up Page$")
+    public void setEmail(String email) {
+        this.signUpPage.email().sendKeys(email);
+    }
+
+    @And("^I click the Sign Up Page submit button$")
+    public void submit() {
+        this.signUpPage.submitButton().click();
+    }
+
+    @And("^I set \"([^\"]*)\"/\"([^\"]*)\"/\"([^\"]*)\" in date of birth dropdowns$")
+    public void setDateOfBirth(String day,String month,String year) {
+        this.signUpPage.day().selectByVisibleText(day);;
+        this.signUpPage.month().selectByVisibleText(month);
+        this.signUpPage.year().selectByVisibleText(year);
+    }
 }

@@ -23,6 +23,6 @@ public class HomePageSteps {
 
     @And("^I click the SignUp button$")
     public void clickSignUpButton() throws InterruptedException {
-        this.homePage.logInButton().click();
+        this.homePage.signUpButton().click();
     }
 }

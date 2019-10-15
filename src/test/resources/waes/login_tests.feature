@@ -40,7 +40,7 @@ Feature: Login Tests
   #   | Al Skept-Cal Tester |
   #   | Zuper Dooper Dev    |
 
-    Scenario: Logout Test
+  Scenario: Logout Test
     Given I navigate to WAES HomePage
     And I click the LogIn button
     And I set "admin" as username

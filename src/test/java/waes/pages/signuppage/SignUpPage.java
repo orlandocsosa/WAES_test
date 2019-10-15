@@ -61,7 +61,7 @@ public class SignUpPage extends HomePage{
         return year_dropdown;
     }
 
-    WebElement SubmitButton() {
+    WebElement submitButton() {
         return submit_button;
     }
 
