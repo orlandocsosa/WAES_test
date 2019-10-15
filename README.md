@@ -36,7 +36,15 @@ scoop install allure
 
 ### Run tests
 
-From root folder run
+From root folder
+
+Run mvn test for running all suite
+
+```
+mvn test
+```
+
+Run mvn test -Dtest for running a suite
 
 ```
 mvn test -Dtest={name of runner}
