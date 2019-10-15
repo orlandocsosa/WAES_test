@@ -1,6 +1,7 @@
 package waes.pages.detailspage;
 
-import cucumber.api.java.en.And;
+import static org.junit.Assert.assertTrue;
+
 import cucumber.api.java.en.Given;
 
 public class DetailsPageSteps {
@@ -11,18 +12,11 @@ public class DetailsPageSteps {
         this.detailsPage = new DetailsPage();
     }
 
-    // @Given("^I set \"([^\"]*)\" as username$")
-    // public void setUsername(String user) throws InterruptedException {
-    //     this.loginPage.username().sendKeys(user);
-    // }
-
-    // @And("^I set \"([^\"]*)\" as password$")
-    // public void setPassword(String password) {
-    //     this.loginPage.password().sendKeys(password);
-    // }
-
-    // @And("^I click the LoginPage Login button$")
-    // public void login() throws InterruptedException {
-    //     this.loginPage.LoginButton().click();
-    // }
+    @Given("^I should see \"([^\"]*)\" and \"([^\"]*)\" in Details page$")
+    public void setUsername(String name, String email) {
+        String name_element_text = this.detailsPage.name().getText();
+        String email_element_text = this.detailsPage.email().getText();
+        assertTrue(name_element_text.contains(name));
+        assertTrue(email_element_text.contains(email));
+    }
 }

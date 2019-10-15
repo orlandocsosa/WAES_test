@@ -45,6 +45,11 @@ public class ProfilePageSteps {
         this.profilePage.logout_link().click();
     }
 
+    @And("^I click the Details Link$")
+    public void clickDetailsLink() {
+        this.profilePage.detailsLink().click();
+    }
+
     // @And("^I should see a table with the following users$")
     // public void checkTable(ArrayList<String> array) {
     //     // List<WebElement> tableElements = this.profilePage.usersTable();
