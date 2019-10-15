@@ -48,7 +48,7 @@ public class ProfilePage extends BasePage{
         return detailsLink;
     }
 
-    WebElement profileLink() {
+    public WebElement profileLink() {
         return profileLink;
     }
 
@@ -62,12 +62,13 @@ public class ProfilePage extends BasePage{
     }
 
     WebElement welcomeMessage() {
+        wait.forLoading(5);
         List<WebElement> elements = section.findElements(By.tagName("p"));
         return elements.get(0);
     }
 
     WebElement superPowerMessage() {
-        wait.forElementToBeDisplayed(10, this.section, "List");
+        wait.forLoading(5);
         List<WebElement> elements = section.findElements(By.tagName("p"));
         return elements.get(1);
     }

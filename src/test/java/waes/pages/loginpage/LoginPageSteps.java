@@ -14,7 +14,7 @@ public class LoginPageSteps {
     }
 
     @Given("^I set \"([^\"]*)\" as username$")
-    public void setUsername(String user) throws InterruptedException {
+    public void setUsername(String user) {
         this.loginPage.username().sendKeys(user);
     }
 
@@ -24,12 +24,17 @@ public class LoginPageSteps {
     }
 
     @And("^I click the LoginPage Login button$")
-    public void login(){
+    public void login() {
         this.loginPage.loginButton().click();
     }
 
     @And("^I should see the Login button from Login page$")
     public void checkLoginPresent(){
         assertTrue(this.loginPage.loginButton().isDisplayed());
+    }
+
+    @And("^I click the Heroes Profile button$")
+    public void clickHomeButton() {
+        this.loginPage.homeButton().click();
     }
 }

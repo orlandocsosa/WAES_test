@@ -62,6 +62,12 @@ Example:
 mvn test -Dtest=LoginTests
 ```
 
+Add -Dheadless=true for headless browser
+
+```
+mvn test -Dtest=LoginTests -Dheadless=true
+```
+
 Also the folder 'allure-results' will be created in root with xml files
 
 ### Run/Serve Reports

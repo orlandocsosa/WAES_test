@@ -13,6 +13,9 @@ public class Setup {
     @Before
     public void setWebDriver() throws Exception {
 
+        String toggle = System.getProperty("headless");
+        boolean headless = Boolean.parseBoolean(toggle);
+
         String browser = System.getProperty("browser");
         if (browser == null) {
             browser = "chrome";
@@ -21,6 +24,10 @@ public class Setup {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("start-maximized");
+                if (headless) {
+                    chromeOptions.addArguments("headless");
+                }
+
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":

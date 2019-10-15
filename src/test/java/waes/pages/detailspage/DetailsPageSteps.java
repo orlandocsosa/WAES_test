@@ -3,6 +3,7 @@ package waes.pages.detailspage;
 import static org.junit.Assert.assertTrue;
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.And;
 
 public class DetailsPageSteps {
 
@@ -18,5 +19,10 @@ public class DetailsPageSteps {
         String email_element_text = this.detailsPage.email().getText();
         assertTrue(name_element_text.contains(name));
         assertTrue(email_element_text.contains(email));
+    }
+
+    @And("^I click the Profile Link$")
+    public void clickProfileLink() {
+        this.detailsPage.profileLink().click();
     }
 }

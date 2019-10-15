@@ -17,6 +17,7 @@ public class DetailsPage extends ProfilePage{
     private List<WebElement> data;
 
     WebElement name() {
+        wait.forLoading(5);
         return data.get(0);
     }
 
