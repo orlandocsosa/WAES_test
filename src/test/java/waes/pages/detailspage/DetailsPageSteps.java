@@ -2,9 +2,12 @@ package waes.pages.detailspage;
 
 import static org.junit.Assert.assertTrue;
 
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 
+/**
+ * Class with assertion and element interaction methods for tests using DetailsPage page object.
+ */
 public class DetailsPageSteps {
 
     private DetailsPage detailsPage;

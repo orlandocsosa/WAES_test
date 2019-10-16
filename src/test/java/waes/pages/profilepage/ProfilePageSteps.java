@@ -6,8 +6,12 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+
 import cucumber.api.java.en.And;
 
+/**
+ * Class with assertion and element interaction methods for tests using ProfilePage page object.
+ */
 public class ProfilePageSteps {
 
     private ProfilePage profilePage;

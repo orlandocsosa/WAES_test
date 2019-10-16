@@ -1,18 +1,24 @@
 package waes.pages.signuppage;
 
-import waes.pages.homepage.HomePage;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import waes.pages.homepage.HomePage;
+
+/**
+ * Sign Up Page page object - Selectors and methods returning page object elements to be used in steps definitions
+ */
 public class SignUpPage extends HomePage{
 
     SignUpPage() {
         super();
     }
 
+    /**
+     * Selectors for page elements
+     */
     @FindBy(id = "username_input")
     private WebElement user_input;
 
@@ -28,7 +34,9 @@ public class SignUpPage extends HomePage{
     @FindBy(id = "submit_button")
     private WebElement submit_button;
     
-
+    /**
+     * Elements Methods
+     */
     WebElement username() {
         wait.forElementToBeDisplayed(10, this.user_input, "username");
         return user_input;
@@ -62,6 +70,7 @@ public class SignUpPage extends HomePage{
     }
 
     WebElement submitButton() {
+        wait.forElementToBeDisplayed(10, this.submit_button, "submit_button");
         return submit_button;
     }
 

@@ -1,16 +1,22 @@
 package waes.pages.loginpage;
 
-import waes.pages.homepage.HomePage;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import waes.pages.homepage.HomePage;
+
+/**
+ * Login Page page object - Selectors and methods returning page object elements to be used in steps definitions
+ */
 public class LoginPage extends HomePage{
 
     LoginPage() {
         super();
     }
 
+    /**
+     * Selectors for page elements
+     */
     @FindBy(id = "username_input")
     private WebElement user_input;
 
@@ -20,6 +26,9 @@ public class LoginPage extends HomePage{
     @FindBy(id = "login_button")
     private WebElement login_button;
 
+    /**
+     * Elements Methods
+     */
     WebElement username() {
         wait.forElementToBeDisplayed(10, this.user_input, "username");
         return user_input;

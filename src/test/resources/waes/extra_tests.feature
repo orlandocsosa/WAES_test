@@ -34,4 +34,8 @@ Feature: Extra Tests
     And I click the Profile Link
     Then I should see the Welcome message for the "admin" user
 
+   Scenario: WAES Link check
+    Given I navigate to WAES HomePage
+    And I click the WAES Link
+    And I should see WAES url
       

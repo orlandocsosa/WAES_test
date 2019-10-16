@@ -1,10 +1,15 @@
 package waes.pages.signuppage;
 
+import static org.junit.Assert.assertTrue;
+
 import org.openqa.selenium.JavascriptExecutor;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 
+/**
+ * Class with assertion and element interaction methods for tests using SignUpPage page object.
+ */
 public class SignUpPageSteps {
 
     private SignUpPage signUpPage;
@@ -14,7 +19,7 @@ public class SignUpPageSteps {
     }
 
     @Given("^I set \"([^\"]*)\" as username in Sign Up Page$")
-    public void setUsername(String user) throws InterruptedException {
+    public void setUsername(String user) {
         this.signUpPage.username().sendKeys(user);
     }
 
@@ -37,6 +42,11 @@ public class SignUpPageSteps {
     public void submit() {
         JavascriptExecutor executor = this.signUpPage.jsExecutor();
         executor.executeScript("arguments[0].click();", this.signUpPage.submitButton());
+    }
+
+    @And("^I should see \"([^\"]*)\" message in status component$")
+    public void checkMessage(String message){
+        assertTrue(this.signUpPage.userStatus().getText().contains(message));
     }
 
     @And("^I set \"([^\"]*)\"/\"([^\"]*)\"/\"([^\"]*)\" in date of birth dropdowns$")

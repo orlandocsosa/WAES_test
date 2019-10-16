@@ -10,9 +10,15 @@ This framework is meant to be used for testing [WAES](https://waesworks.bitbucke
 
 [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
+[Chromedriver](https://chromedriver.chromium.org/downloads)
+
 [Allure](http://allure.qatools.ru/) Reports Framework (See Allure Install)
 
-## Allure Install - Scoop Install (Windows)
+## Chomedriver install
+
+Follow these instructions: https://chromedriver.chromium.org/getting-started
+
+## Allure Reports Install - Scoop Install (Windows)
 
 ### Prerequisites
 
@@ -34,7 +40,7 @@ Then run
 scoop install allure
 ```
 
-### Run tests
+## Run tests
 
 From root folder
 
@@ -70,9 +76,10 @@ mvn test -Dtest=LoginTests -Dheadless=true
 
 Also the folder 'allure-results' will be created in root with xml files
 
-### Run/Serve Reports
+## Run/Serve Reports
 
-From Powershell run
+From Powershell run 
+And after xml creation from a test run
 
 ```
 allure serve /home/path/to/project/allure-results/

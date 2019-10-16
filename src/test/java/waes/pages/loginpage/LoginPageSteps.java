@@ -5,6 +5,9 @@ import static org.junit.Assert.assertTrue;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 
+/**
+ * Class with assertion and element interaction methods for tests using LoginPage page object.
+ */
 public class LoginPageSteps {
 
     private LoginPage loginPage;
@@ -28,9 +31,9 @@ public class LoginPageSteps {
         this.loginPage.loginButton().click();
     }
 
-    @And("^I should see the Login button from Login page$")
-    public void checkLoginPresent(){
-        assertTrue(this.loginPage.loginButton().isDisplayed());
+    @And("^I should see \"([^\"]*)\" message in status component$")
+    public void checkMessage(String message){
+        assertTrue(this.loginPage.userStatus().getText().contains(message));
     }
 
     @And("^I click the Heroes Profile button$")
