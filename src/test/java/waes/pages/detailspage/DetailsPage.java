@@ -2,8 +2,6 @@ package waes.pages.detailspage;
 
 import waes.pages.profilepage.ProfilePage;
 
-import java.util.List;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,15 +11,20 @@ public class DetailsPage extends ProfilePage{
         super();
     }
 
-    @FindBy(tagName = "li")
-    private List<WebElement> data;
+    @FindBy(css = "#___gatsby > div > div > main > div:nth-child(2) > section > ul > li:nth-child(1)")
+    private WebElement name;
+
+    @FindBy(css = "#___gatsby > div > div > main > div:nth-child(2) > section > ul > li:nth-child(2)")
+    private WebElement email;
+
+    
 
     WebElement name() {
-        wait.forLoading(5);
-        return data.get(0);
+        wait.forElementToBeDisplayed(5,name,"name");
+        return name;
     }
 
     WebElement email() {
-        return data.get(1);
+        return email;
     }
 }

@@ -1,9 +1,6 @@
 package waes.pages.homepage;
 
 import waes.pages.BasePage;
-
-import java.util.List;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,8 +9,8 @@ public class HomePage extends BasePage{
 
     private static final String HOME_PAGE_URL = "https://waesworks.bitbucket.io/";
 
-    @FindBy(tagName = "h1")
-    private List<WebElement> title;
+    @FindBy(xpath = "/html/body/div/div/div/main/section/h1")
+    private WebElement title;
 
     @FindBy(id = "login_link")
     private WebElement loginButton;
@@ -38,8 +35,8 @@ public class HomePage extends BasePage{
     }
 
     WebElement title() {
-        wait.forElementToBeDisplayed(10, this.title.get(1), "Title");
-        return title.get(1);
+        wait.forElementToBeDisplayed(10, this.title, "Title");
+        return title;
     }
 
     public WebElement logInButton() {

@@ -1,5 +1,7 @@
 package waes.pages.signuppage;
 
+import org.openqa.selenium.JavascriptExecutor;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 
@@ -33,7 +35,8 @@ public class SignUpPageSteps {
 
     @And("^I click the Sign Up Page submit button$")
     public void submit() {
-        this.signUpPage.submitButton().click();
+        JavascriptExecutor executor = this.signUpPage.jsExecutor();
+        executor.executeScript("arguments[0].click();", this.signUpPage.submitButton());
     }
 
     @And("^I set \"([^\"]*)\"/\"([^\"]*)\"/\"([^\"]*)\" in date of birth dropdowns$")
