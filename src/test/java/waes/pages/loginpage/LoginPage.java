@@ -30,6 +30,7 @@ public class LoginPage extends HomePage{
     }
 
     WebElement loginButton() {
+        wait.forElementToBeDisplayed(10, this.login_button, "login_button");
         return login_button;
     }
 }

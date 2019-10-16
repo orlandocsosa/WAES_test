@@ -2,12 +2,8 @@ package waes.pages.profilepage;
 
 import waes.pages.BasePage;
 
-import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,8 +33,8 @@ public class ProfilePage extends BasePage{
     @FindBy(id = "status")
     private WebElement status;
 
-    @FindBy(tagName = "table")
-    private List<WebElement> table;
+    @FindBy(id = "users_list_table")
+    private WebElement table;
 
     WebElement homeButton() {
         return homeButton;
@@ -68,22 +64,11 @@ public class ProfilePage extends BasePage{
     }
 
     WebElement superPowerMessage() {
-        wait.forLoading(5);
         List<WebElement> elements = section.findElements(By.tagName("p"));
         return elements.get(1);
     }
 
-    List<WebElement> usersTable() {
+    WebElement usersTable() {
         return table;
     }
-
-    // void checkTable(ArrayList<String> table) {
-    //     List<WebElement> webTable = usersTable();
-    //     for (WebElement element : webTable) {
-    //         assertTrue();
-    //     }
-    //     // table.keySet();
-    //     // assertTrue(webTable.get(1).getText().contains(s)
-
-    // }
 }
